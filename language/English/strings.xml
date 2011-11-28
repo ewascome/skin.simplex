@@ -15,6 +15,9 @@
 	<string id="31010">Aired</string>
 	<string id="31011">Length</string>
 	<string id="31012">Unwatched</string>
+	<string id="31039">Favorite</string>
+	<string id="31063">Favorites</string>
+	<string id="31068">Finish Time</string>
 
 <!--  Skin Preferences  -->
 	<string id="31101">Show Slideshow</string>
