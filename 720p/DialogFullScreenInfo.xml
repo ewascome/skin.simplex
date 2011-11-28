@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<window type="dialog" id="142">
+	<defaultcontrol always="true">603</defaultcontrol>
+	<controls>		
+		<!-- video player -->
+
+		<control type="image" id="1">
+			<posy>500</posy>
+			<height>220</height>
+			<width>1280</width>
+			<aspectratio>stretch</aspectratio>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
+			<texture border="0,0,0,0">background_overlay.png</texture>
+		</control>
+		<control type="image" id="1">
+			<posx>-50</posx>
+			<posy>500</posy>
+			<height>190</height>
+			<width>270</width>
+			<aspectratio>stretch</aspectratio>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
+			<texture border="0,0,0,0">thumb_background.png</texture>
+		</control>
+		<control type="image">
+			<posx>15</posx>
+			<posy>565</posy>
+			<width>150</width>
+			<height>100</height>
+			<aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
+			<texture fallback="thumbs/tvshow.png" diffuse="diffuse_square.png" background="true">$INFO[VideoPlayer.Cover]</texture>
+			<visible>[VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
+		</control>
+		<control type="image">
+			<posx>15</posx>
+			<posy>665</posy>
+			<width>150</width>
+			<height>100</height>
+			<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+			<texture fallback="thumbs/tvshow.png" diffuse="reflection_square.png" background="true" flipy="true">$INFO[VideoPlayer.Cover]</texture>
+			<visible>[VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
+		</control>
+		<control type="image">
+			<posx>33</posx>
+			<posy>510</posy>
+			<width>113</width>
+			<height>170</height>
+			<aspectratio scalediffuse="false" align="center" aligny="bottom">scale</aspectratio>
+			<texture fallback="thumbs/movie.png" diffuse="diffuse_square.png" background="true">$INFO[VideoPlayer.Cover]</texture>
+			<visible>[VideoPlayer.Content(movies)] + ![Window.IsActive(2901)]</visible>
+		</control>
+		<control type="image">
+			<posx>33</posx>
+			<posy>680</posy>
+			<width>113</width>
+			<height>170</height>
+			<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+			<texture fallback="thumbs/movie.png" diffuse="reflection_square.png" flipy="true" background="true">$INFO[VideoPlayer.Cover]</texture>
+			<visible>[VideoPlayer.Content(movies)] + ![Window.IsActive(2901)]</visible>
+		</control>
+		
+		<!-- MOVIES & TV SHOWS -->
+		<control type="group" id="1">
+			<posx>30</posx>
+			<posy>515</posy>
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + ![Window.IsActive(2901)]</visible>
+			<control type="label" id="1">
+				<width>1000</width>
+				<posx>150</posx>
+				<label>[UPPERCASE]$INFO[VideoPlayer.Title][/UPPERCASE]</label>
+				<align>left</align>
+				<textcolor>Orange</textcolor>
+				<font>title1</font>
+			</control>
+			<control type="label" id="1">
+				<posy>30</posy>
+				<posx>1225</posx>
+				<width>500</width>
+				<align>right</align>
+				<label>$INFO[Player.FinishTime,[UPPERCASE]$LOCALIZE[31068][/UPPERCASE] &#xB7; ]</label>
+				<textcolor>Orange</textcolor>
+				<font>info1</font>
+			</control>
+			<!-- movies : remaining time deleted, finish time separated and moved to right end -->
+			<control type="label" id="1">
+				<posy>30</posy>
+				<width>800</width>
+				<posx>150</posx>
+				<align>left</align>
+				<label>$INFO[VideoPlayer.Year] &#xB7; $INFO[Player.Time] / $INFO[Player.Duration]</label>
+				<textcolor>White</textcolor>
+				<font>info1</font>
+				<visible>VideoPlayer.Content(movies)</visible>
+			</control>
+			<!-- tv shows : remaining time deleted, finish time separated and moved to right end -->
+			<control type="label" id="1">
+				<posy>30</posy>
+				<width>800</width>
+				<posx>150</posx>
+				<align>left</align>
+				<label>$INFO[VideoPlayer.TVShowTitle,, &#xB7;]$INFO[VideoPlayer.Season, S, ]$INFO[VideoPlayer.Episode,E, &#xB7;] $INFO[Player.Time] / $INFO[Player.Duration]</label>t
+				<textcolor>White</textcolor>
+				<font>info1</font>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+			<control type="textbox" id="8">
+				<posy>65</posy>
+				<posx>150</posx>
+				<width>1070</width>
+				<height>130</height>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<label>$INFO[VideoPlayer.PlotOutline]</label>
+				<visible>!IsEmpty(VideoPlayer.PlotOutline)</visible>
+				<textcolor>White</textcolor>
+				<font>info1</font>
+				<autoscroll delay="5000" time="1500" repeat="10000">!Control.HasFocus(13)</autoscroll>
+			</control>
+			<control type="textbox" id="8">
+				<posy>65</posy>
+				<posx>150</posx>
+				<width>1070</width>
+				<height>210</height>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<label>$INFO[VideoPlayer.Plot]</label>
+				<visible>IsEmpty(VideoPlayer.PlotOutline)</visible>
+				<textcolor>White</textcolor>
+				<font>info1</font>
+				<autoscroll delay="5000" time="1500" repeat="10000">!Control.HasFocus(13)</autoscroll>
+			</control>
+		</control>
+	</controls>
+</window>
