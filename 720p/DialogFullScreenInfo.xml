@@ -63,6 +63,14 @@
 				<font>title1</font>
 			</control>
 			<control type="label" id="1">
+				<width>830</width>
+				<posx>980</posx>
+				<label>$INFO[Player.FinishTime,$LOCALIZE[31068] &#xB7; ]</label>
+				<align>right</align>
+				<textcolor>Gray</textcolor>
+				<font>info1</font>
+			</control>
+			<control type="label" id="1">
 				<posy>26</posy>
 				<width>830</width>
 				<posx>150</posx>
@@ -105,6 +113,14 @@
 				<align>left</align>
 				<textcolor>Orange</textcolor>
 				<font>title1</font>
+			</control>
+			<control type="label" id="1">
+				<width>763</width>
+				<posx>913</posx>
+				<label>$INFO[Player.FinishTime,$LOCALIZE[31068] &#xB7; ]</label>
+				<align>right</align>
+				<textcolor>Gray</textcolor>
+				<font>info1</font>
 			</control>
 			<control type="label" id="1">
 				<posy>26</posy>
