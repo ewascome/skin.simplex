@@ -1,0 +1,55 @@
+<window id="2004">
+	<defaultcontrol>-</defaultcontrol>
+	<animation type="WindowOpen">
+		<effect type="slide" start="+600,0" end="0,0" time="600" tween="cubic" easing="out" delay="800" />
+		<effect type="fade" start="0" end="100" time="600" delay="800" />
+	</animation>
+	<animation type="WindowClose">
+		<effect type="slide" start="0,0" end="+600,0" time="600" tween="cubic" easing="out" />
+		<effect type="fade" start="100" end="0" time="600" />
+	</animation>
+	<controls>
+		<control type="group">
+			<posx>1057</posx>
+			<posy>45</posy>
+			<control type="image">
+				<width>220</width>
+				<height>172</height>
+				<texture>osd/osd_back_info.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="videowindow" id="1">
+				<description>Video Preview</description>
+				<posx>10</posx>
+				<posy>17</posy>
+				<width>200</width>
+				<height>112.5</height>
+				<texture>osd/osd_back_info.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>130</posy>
+				<width>220</width>
+				<font>homelabel</font>
+				<align>center</align>
+				<label>$INFO[VideoPlayer.Title]</label>
+				<textcolor>orange</textcolor>
+				<visible>VideoPlayer.Content(movies)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>130</posy>
+				<width>220</width>
+				<font>homelabel</font>
+				<align>center</align>
+				<label>$INFO[VideoPlayer.TVShowTitle]</label>
+				<textcolor>orange</textcolor>
+				<visible>VideoPlayer.Content(episodes)</visible>
+			</control>
+		</control>
+
+		<include>Object_DebugGrid</include>
+
+	</controls>
+</window>
