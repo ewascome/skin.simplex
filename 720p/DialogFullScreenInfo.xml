@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window type="dialog" id="142">
-	<defaultcontrol always="true">603</defaultcontrol>
+<defaultcontrol always="true">603</defaultcontrol>
 	<animation effect="fade" time="100">WindowOpen</animation>
 	<animation effect="fade" time="100">WindowClose</animation>
 	<controls>		
@@ -217,5 +217,6 @@
 				<label>$INFO[VideoPlayer.TimeRemaining]</label>
 			</control>
 		</control>
-	</controls>
+		<include>OSDMediaInfo</include>
+    </controls>
 </window>
